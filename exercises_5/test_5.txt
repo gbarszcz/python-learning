@@ -1,0 +1,18 @@
+(dp0
+I456
+(i__main__
+Ksiazka
+p1
+(dp2
+S'autor'
+p3
+S'Autor 2'
+p4
+sS'isbn'
+p5
+I456
+sS'tytul'
+p6
+S'Tytul 2'
+p7
+sbs.

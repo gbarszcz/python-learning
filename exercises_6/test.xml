@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<test>
+    <element id="1">
+        <par>Parameter 1</par>
+    </element>
+    <element id="2">
+        <par>Parameter 2</par>
+    </element>
+    <element id="3">
+        <par>Parameter 3</par>
+    </element>
+</test>
