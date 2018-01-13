@@ -2,6 +2,7 @@
 # Korzystając z modułu Tkinter napisz prosty kalkulator pozwalający dodawać, odejmować, mnożyć i dzielić.
 import Tkinter as tk
 import tkFont
+import logging
 
 root = tk.Tk()
 
@@ -20,9 +21,12 @@ actions = {
 }
 action = None
 
+logging.basicConfig(filename='logger.log', level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 
 def add_figure(num):
-    global number, command
+    global number
     number = number + num
     element.set(int(number))
 
@@ -31,6 +35,7 @@ def change_action(act):
     global action, number
     total.set(element.get())
     action = actions.get(act)
+    logger.debug("Action has been changed.")
     number = ''
 
 
@@ -39,6 +44,8 @@ def equals(act):
     if act is not None:
         element.set(int(act(total.get(), int(number))))
         number = str(element.get())
+    else:
+        logger.warning("Action has not been chosen.")
 
 
 def clear():
@@ -47,6 +54,7 @@ def clear():
     element.set(0)
     total.set(0)
     action = None
+    logger.info("Elements were cleared.")
 
 
 # main messagebox
